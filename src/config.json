@@ -1,0 +1,12 @@
+{
+    "bunny": {
+    "start_point": 0,
+    "step_per_sec": 3,
+    "step_sign": "B"
+    },
+    "turtle": {
+    "start_point": 0,
+    "step_per_sec": 1,
+    "step_sign": "T"
+    }
+}
