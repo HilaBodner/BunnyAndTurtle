@@ -1,12 +1,15 @@
 import asyncio
+import json
 
-from Animals.Bunny import Bunny
-from Animals.Turtle import Turtle
 from Animals.CompetingAnimal import CompetingAnimal
 from Road import Road
 
-havi = CompetingAnimal("Havi the bunny", 0, 3, 'B')
-tirza = CompetingAnimal("Tirza the turtle", 0, 1, 'T')
+with open("config.json") as json_data_file:
+    data = json.load(json_data_file)
+
+havi = CompetingAnimal("Havi", data["bunny"]["start_point"], data["bunny"]["step_per_sec"], data["bunny"]["step_sign"])
+tirza = CompetingAnimal("Tirza", data["turtle"]["start_point"], data["turtle"]["step_per_sec"],
+                        data["turtle"]["step_sign"])
 all_animals = [havi, tirza]
 race_road = Road(20)
 race_length = race_road.length_in_steps
